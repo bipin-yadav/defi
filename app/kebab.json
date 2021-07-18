@@ -1,0 +1,691 @@
+{
+  "poolLength": "17",
+  "masterChefContract": "0x76FCeffFcf5325c6156cA89639b17464ea833ECd",
+  "projectName": "Kebab Finance",
+  "platform":"Binance Smart Chain",
+  "poolDetails": [
+    {
+      "poolId": 0,
+      "poolName": "Kebab",
+      "poolAddress": "0x7979F6C54ebA05E18Ded44C4F986F49a5De551c2",
+      "poolPair": "Kebab"
+    },
+    {
+      "poolId": 1,
+      "poolName": "Kebab-BUSD",
+      "poolAddress": "0xD51bee2E0A3886289F6D229b6f30c0C2b34fC0Ec",
+      "poolPair": "Kebab-BUSD"
+    },
+    {
+      "poolId": 2,
+      "poolName": "BNB-BUSD",
+      "poolAddress": "0x1B96B92314C44b159149f7E0303511fB2Fc4774f",
+      "poolPair": "BNB-BUSD"
+    },
+    {
+      "poolId": 3,
+      "poolName": "USDT-BUSD",
+      "poolAddress": "0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd",
+      "poolPair": "USDT-BUSD"
+    },
+    {
+      "poolId": 4,
+      "poolName": "BTCB-BUSD",
+      "poolAddress": "0xb8875e207EE8096a929D543C9981C9586992eAcb",
+      "poolPair": "BTCB-BUSD"
+    },
+    {
+      "poolId": 5,
+      "poolName": "Kebab-BNB",
+      "poolAddress": "0x25fd42D82d5c238ee7AA277261AA6CA5BDFE5CD4",
+      "poolPair": "Kebab-BNB"
+    },
+    {
+      "poolId": 6,
+      "poolName": "Cake-BUSD",
+      "poolAddress": "0x0Ed8E0A2D99643e1e65CCA22Ed4424090B8B7458",
+      "poolPair": "Cake-BUSD"
+    },
+    {
+      "poolId": 7,
+      "poolName": "DOT-BUSD",
+      "poolAddress": "0x54C1ec2f543966953F2F7564692606EA7D5a184e",
+      "poolPair": "DOT-BUSD"
+    },
+    {
+      "poolId": 8,
+      "poolName": "BUSD-DAI",
+      "poolAddress": "0x3aB77e40340AB084c3e23Be8e5A6f7afed9D41DC",
+      "poolPair": "BUSD-DAI"
+    },
+    {
+      "poolId": 9,
+      "poolName": "BUSD-USDC",
+      "poolAddress": "0x680Dd100E4b394Bda26A59dD5c119A391e747d18",
+      "poolPair": "BUSD-USDC"
+    },
+    {
+      "poolId": 10,
+      "poolName": "SXP-BUSD",
+      "poolAddress": "0x2F82286c2178e9144F2a7b8d27D5B3203253CBA4",
+      "poolPair": "SXP-BUSD"
+    },
+    {
+      "poolId": 11,
+      "poolName": "TWT-BUSD",
+      "poolAddress": "0x65F898950e1759d95b5aae15F452E37c5bbE641e",
+      "poolPair": "TWT-BUSD"
+    },
+    {
+      "poolId": 12,
+      "poolName": "BIFI-BUSD",
+      "poolAddress": "0xd3F004E303114423f122c78AFDeD4AcfE97675B1",
+      "poolPair": "BIFI-BUSD"
+    },
+    {
+      "poolId": 13,
+      "poolName": "ETH-BUSD",
+      "poolAddress": "0xd9A0d1F5e02dE2403f68Bb71a15F8847A854b494",
+      "poolPair": "ETH-BUSD"
+    },
+    {
+      "poolId": 14,
+      "poolName": "DOGE-BUSD",
+      "poolAddress": "0x1Efcb446bFa553A2EB2fff99c9F76962be6ECAC3",
+      "poolPair": "DOGE-BUSD"
+    },
+    {
+      "poolId": 15,
+      "poolName": "BTCB-Kebab",
+      "poolAddress": "0x45D8D5d9bD425Efc26e3259848BCFEfA16F927F0",
+      "poolPair": "BTCB-Kebab"
+    },
+    {
+      "poolId": 16,
+      "poolName": "ETH-BTCB",
+      "poolAddress": "0x7380E10F5C5f9DFF4857de3cf9c39Bb16F4C6dcf",
+      "poolPair": "ETH-BTCB"
+    }
+  ],
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract KebabToken",
+          "name": "_cake",
+          "type": "address"
+        },
+        {
+          "internalType": "contract KetchupBar",
+          "name": "_syrup",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_devaddr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_cakePerBlock",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_startBlock",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "pid",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Deposit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "pid",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "EmergencyWithdraw",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "pid",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Withdraw",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "BONUS_MULTIPLIER",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_allocPoint",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IBEP20",
+          "name": "_lpToken",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_withUpdate",
+          "type": "bool"
+        }
+      ],
+      "name": "add",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cake",
+      "outputs": [
+        {
+          "internalType": "contract KebabToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cakePerBlock",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_devaddr",
+          "type": "address"
+        }
+      ],
+      "name": "dev",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "devaddr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        }
+      ],
+      "name": "emergencyWithdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "enterStaking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_from",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_to",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMultiplier",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "leaveStaking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "massUpdatePools",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        }
+      ],
+      "name": "migrate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "migrator",
+      "outputs": [
+        {
+          "internalType": "contract IMigratorChef",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "pendingCake",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "poolInfo",
+      "outputs": [
+        {
+          "internalType": "contract IBEP20",
+          "name": "lpToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "allocPoint",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lastRewardBlock",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "accCakePerShare",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "poolLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_allocPoint",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_withUpdate",
+          "type": "bool"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMigratorChef",
+          "name": "_migrator",
+          "type": "address"
+        }
+      ],
+      "name": "setMigrator",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "startBlock",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "syrup",
+      "outputs": [
+        {
+          "internalType": "contract KetchupBar",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalAllocPoint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "multiplierNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateMultiplier",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        }
+      ],
+      "name": "updatePool",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "userInfo",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rewardDebt",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_pid",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+}
